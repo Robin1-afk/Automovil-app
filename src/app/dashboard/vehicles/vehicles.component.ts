@@ -5,6 +5,7 @@ import { MarcaService } from 'src/app/core/MarcaService/marca.service';
 import { VehiculosService } from 'src/app/core/VehiculoService/vehiculos.service';
 import { Marca } from 'src/app/models/marca';
 import { Vehiculo } from 'src/app/models/vehiculos';
+
 import Swal from 'sweetalert2'
 
 
@@ -70,12 +71,42 @@ tipoVehiculo =[
   },
 ];
 
+Propetarios =[
+  {
+      id: 15311534, 
+      name:"Roberto", 
+  },
+
+  {
+    id: 1534534, 
+    name:"Ricardo", 
+  },
+  
+  {
+    id: 1532234, 
+    name:"Jose", 
+  },
+
+  {
+    id: 153564, 
+    name:"Robin", 
+  },
+
+  {
+    id: 153434, 
+    name:"Automóvil", 
+  },
+];
+
+
 postVehiculo(){
   const VEHICULO: Vehiculo = {
    placa: this.vehiculoForm.value.placa,
    id_marca: this.vehiculoForm.value.id_marca,
    tipo_v: this.vehiculoForm.value.tipo_v,
-   propetario: this.vehiculoForm.value.propetario 
+   propetario: this.vehiculoForm.value.propetario.name,
+   id_propetario: this.vehiculoForm.value.propetario.id,
+
   }
   this.__vehiculo.postSave(VEHICULO).subscribe(data=> {
 

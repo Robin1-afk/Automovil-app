@@ -4,5 +4,6 @@ export interface Vehiculo {
     id_marca: string;
     tipo_v: string;
     propetario: string;
+    id_propetario: string;
     nombre?:string;
 }
