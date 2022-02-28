@@ -18,6 +18,7 @@ export class VehiclesComponent implements OnInit {
   listarVehiculo: Vehiculo[] = [];
   listarMarca: Marca[] = [];
   vehiculoForm : FormGroup;
+  propetario! : string;
 
   constructor( private __marca : MarcaService, private fp:FormBuilder, private __vehiculo : VehiculosService ,
   private aRoute: ActivatedRoute ) {
@@ -42,6 +43,7 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVehiculo();
+    this.listarVehiculo = [];
   }
 
 tipoVehiculo =[
@@ -159,6 +161,21 @@ getVehiculo(){
 // })
   
   // }
+
+  Search(){
+    if(this.propetario != ""){
+      this.listarVehiculo = this.listarVehiculo.filter(res=>{
+      const x = res.propetario;
+      const y = res.id_propetario;
+      const z = res.placa;
+
+      const resultado = `${x}, ${y}, ${z}`;
+      
+      return resultado.toLocaleLowerCase().match(this.propetario.toLocaleLowerCase());
+      });
+      }else if(this.propetario == ""){
+       this.ngOnInit();}
+       }
 
   clearForm(){
     this.vehiculoForm.reset()

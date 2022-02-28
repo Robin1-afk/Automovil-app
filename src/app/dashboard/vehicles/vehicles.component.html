@@ -3,7 +3,7 @@
 <h1 *ngFor="let item of listarMarca">Registro marca  {{item.nombre}}</h1>
 </div>
 <br>
-<div style="margin-left: 16%;">   
+<div style="margin-left: 14%;">   
     
 <form [formGroup]="vehiculoForm" (ngSubmit)="postVehiculo()">
     <div class="row g-3 align-items-center">
@@ -51,7 +51,7 @@
   </symbol>
 </svg>
 <br>
-<div class="alert alert-warning d-flex align-items-center" style="width: 948px;" role="alert">
+<div class="alert alert-warning d-flex align-items-center" style="width: 1000px;" role="alert">
   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
   <div>
     Todos los campos son obligatorios
@@ -59,6 +59,10 @@
 </div>
 
 </div>
+<br>
+<nav class="navbar">
+  <input  [(ngModel)]="propetario" style="width: 400px; margin-left: 20px;"  type="text" class="form-control text-center" placeholder="Buscar" #myInput (input)="Search()"> 
+</nav>
 <br>
 <table class="table caption-top">
     <thead>
