@@ -1,0 +1,11 @@
+<div style="margin-left: 12%; width: 78%;">   
+    <br>
+    <div  *ngFor="let item of notificaciones">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Actualizaciónes!</h4>
+            <p>{{item[0]}}</p>
+            <hr>
+            <p class="mb-0 display-6">{{item[1]}}:{{item[3]}}</p>
+          </div>
+    
+    </div>
